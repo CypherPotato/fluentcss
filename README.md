@@ -5,7 +5,7 @@ on how to use this library.
 
 It was written in plain CSS and vanilla Javascript. No SCSS, pre-compilers, Node, etc., was used in this project.
 
-You can visit the interactive gallery [here]().
+You can visit the interactive gallery [here](https://fluentcss.project-principium.dev/#/).
 
 ## Building
 
