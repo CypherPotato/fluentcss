@@ -1,0 +1,137 @@
+<div class="win-nav-dashboard">
+    <include name="__nav"></include>
+    <main class="immersive-box">
+        <div class="app-contents">
+            <section>
+                <h3>
+                    List box with some items
+                </h3>
+                <div class="win-viewbox">
+                    <div class="viewbox-body">
+                        <div class="listbox">
+                            <div class="list-item">
+                                Item 1
+                            </div>
+                            <div class="list-item">
+                                Item 2
+                            </div>
+                            <div class="list-item">
+                                Item 3
+                            </div>
+                        </div>
+                    </div>
+                    <div class="viewbox-footer">
+                        <pre><code class="language-html">
+                            <xmp>
+                                <div class="listbox">
+                                    <div class="list-item">
+                                        Item 1
+                                    </div>
+                                    <div class="list-item">
+                                        Item 2
+                                    </div>
+                                    <div class="list-item">
+                                        Item 3
+                                    </div>
+                                </div>
+                            </xmp>
+                        </code></pre>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <h3>
+                    List box with an predefined layout schema
+                </h3>
+                <div class="win-viewbox">
+                    <div class="viewbox-body">
+                        <style>
+                            .my-layout-schema>.list-item {
+                                display: grid;
+                                grid-template-columns: 56px auto 100px;
+                                align-items: center;
+                            }
+
+                            .my-layout-schema>.list-item div+div {
+                                font-size: .9rem;
+                                opacity: .75;
+                            }
+                        </style>
+                        <div class="listbox my-layout-schema">
+                            <div class="list-item">
+                                <img src="/etc/marisad2.png" class="win-user-img md">
+                                <div class="main-data">
+                                    <div>User name</div>
+                                    <div>
+                                        User details, email, info, etc...
+                                    </div>
+                                </div>
+                                <button class="win-button">
+                                    View info
+                                </button>
+                            </div>
+                            <div class="list-item">
+                                <img src="/etc/marisad2.png" class="win-user-img md">
+                                <div class="main-data">
+                                    <div>User name</div>
+                                    <div>
+                                        User details, email, info, etc...
+                                    </div>
+                                </div>
+                                <button class="win-button">
+                                    View info
+                                </button>
+                            </div>
+                            <div class="list-item">
+                                <img src="/etc/marisad2.png" class="win-user-img md">
+                                <div class="main-data">
+                                    <div>User name</div>
+                                    <div>
+                                        User details, email, info, etc...
+                                    </div>
+                                </div>
+                                <button class="win-button">
+                                    View info
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="viewbox-footer">
+                        <pre><code class="language-html">
+                            <xmp>
+                                <style>
+                                    .my-layout-schema > .list-item {
+                                        display: grid;
+                                        grid-template-columns: 56px auto 100px;
+                                        align-items: center;
+                                    }
+        
+                                    .my-layout-schema > .list-item div + div {
+                                        font-size: .9rem;
+                                        opacity: .75;
+                                    }
+                                </style>
+                                <div class="listbox my-layout-schema">
+                                    <div class="list-item">
+                                        <img src="/etc/marisad2.png" class="win-user-img md">
+                                        <div class="main-data">
+                                            <div>User name</div>
+                                            <div>
+                                                User details, email, info, etc...
+                                            </div>
+                                        </div>
+                                        <button class="win-button">
+                                            View info
+                                        </button>
+                                    </div>
+                                </div>
+                            </xmp>
+                        </code></pre>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+</div>
+
+</html>

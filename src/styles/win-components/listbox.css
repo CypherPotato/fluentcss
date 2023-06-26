@@ -1,0 +1,21 @@
+.listbox .list-item {
+    display: block;
+    padding: 12px;
+    border-radius: var(--control-border-radius);
+    background-color: var(--input-def-bg);
+    color: var(--def-fr);
+    border: 1px solid var(--input-def-border-color);
+    margin-bottom: 4px;
+    cursor: default;
+    text-decoration: none;
+}
+
+.listbox .list-item:hover {
+    background-color: var(--input-hov-bg);
+    color: var(--hov-fr);
+    border: 1px solid var(--input-hov-border-color);
+}
+
+.listbox .list-item:active {
+    opacity: .6;
+} 

@@ -1,0 +1,59 @@
+.win-textbox {
+    position: relative;
+    display: inline-block;
+    background-color: var(--input-def-bg);
+    color: var(--def-fr);
+    border: 1px solid var(--input-def-border-color);
+    border-bottom-color: var(--input-def-bottom-border-color);
+    outline: none;
+    overflow: hidden;
+    border-radius: var(--control-border-radius);
+}
+
+.win-textbox:hover {
+    background-color: var(--input-hov-bg);
+    color: var(--hov-fr);
+    border: 1px solid var(--input-hov-border-color);
+    border-bottom-color: var(--input-hov-bottom-border-color);
+}
+
+.win-textbox:hover > img {
+    opacity: .6;
+}
+
+.win-textbox:has(input:focus),
+.win-textbox:has(textarea:focus) {
+    background-color: white;
+    color: var(--act-fr);
+    border: 1px solid var(--input-act-border-color);
+    border-bottom-color: var(--accent-color);
+}
+
+.win-textbox:has(input:focus) > img {
+    opacity: 1;
+}
+
+.win-textbox > input,
+.win-textbox > textarea {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    padding: 6px 10px;
+    width: 100%;
+    height: 100%;
+    font-family: var(--font-family);
+    border-radius: var(--control-border-radius);
+}
+
+.win-textbox:has(img) > input {
+    padding-left: 32px;
+}
+
+.win-textbox > img {
+    position: absolute;
+    left: 7px;
+    top: 6px;
+    height: 16px;
+    width: auto;
+    opacity: .5;
+}

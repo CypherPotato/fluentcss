@@ -1,0 +1,19 @@
+.win-acrylic {
+    position: relative;
+    backdrop-filter: var(--acrlylic-filter);
+    background: linear-gradient(0deg, var(--acrlylic-background), var(--acrlylic-background)), var(--acrlylic-mask-img);
+    background-blend-mode: screen;
+    border: var(--acrlylic-border);
+}
+
+.win-mica {
+    background-color: var(--mica-def-background);
+    border-radius: var(--window-border-radius);
+    border: var(--mica-border);
+    backdrop-filter: var(--mica-filter);
+}
+
+.win-mica.active {
+    background-color: var(--control-bg);
+    border-color: var(--control-border-color);
+}

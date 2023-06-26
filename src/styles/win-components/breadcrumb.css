@@ -1,0 +1,41 @@
+.win-breadcrumb > a {
+    font-size: 2rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--def-fr);
+    cursor: default;
+}
+
+.win-breadcrumb > a:not(:last-child)::after {
+    display: inline-block;
+    content: '\203A';
+    opacity: .5;
+    font-size: 2.2rem;
+    margin-inline: 9px;
+}
+
+.win-breadcrumb > a:not(:last-child) {
+    opacity: .7;
+}
+
+.win-breadcrumb > a:not(:last-child):hover {
+    opacity: .9;
+}
+
+.win-breadcrumb > a:not(:last-child):active {
+    opacity: .5;
+}
+
+.win-breadcrumb > a:last-child {
+    pointer-events: none;
+}
+
+.win-breadcrumb.small > a {
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.win-breadcrumb.small > a:not(:last-child)::after {
+    font-size: 1.1rem;
+    margin-inline: 4px;
+}

@@ -1,0 +1,77 @@
+code[class*="language-"] {
+    font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    color: #000;
+}
+
+.token.punctuation {
+    color: #000;
+}
+
+.token.comment {
+    color: #008016;
+}
+
+.token.string {
+    color: #E11500;
+}
+
+.token.function {
+    color: #785318;
+}
+
+.token.class-name {
+    color: #0491C1;
+}
+
+.token.doctype,
+.token.prolog {
+    color: #0491C1;
+}
+
+.token.keyword {
+    color: #3200FF;
+}
+
+.token.preprocessor.property {
+    color: #80807F;
+}
+
+.token.preprocessor.property .keyword {
+    color: #80807F;
+}
+
+.token.selector {
+    color: #B80000;
+}
+
+.token.atrule {
+    color: #3200FF;
+}
+
+.token.tag {
+    color: #B80000;
+}
+
+.token.attr-name {
+    color: #FF0000;
+}
+
+.token.attr-value {
+    color: #3200FF;
+}
+
+code[class*="language-css"] {
+    color: #3200FF;
+}
+
+.token.property {
+    color: #ff0000;
+}
+
+code[class*="language-css"] .token.string {
+    color: #3200FF;
+}
+
+code[class*="language-markup"] .token.punctuation {
+    color: #3200FF;
+}

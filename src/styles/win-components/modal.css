@@ -1,0 +1,63 @@
+.win-modal {
+    position: fixed;
+    width: 500px;
+    left: 50%;
+    top: 53%;
+    transform: translate(-50%, -50%);
+    border-radius: var(--window-border-radius);
+    background-color: var(--input-def-bg);
+    color: var(--def-fr);
+    border: 1px solid #9c9c9c;
+    pointer-events: none;
+    opacity: 0;
+    z-index: 10000;
+    overflow: hidden;
+    box-shadow: var(--drop-shadow-xl);
+    transition: .15s ease-out;
+}
+
+.win-modal.big {
+    width: 800px;
+    max-width: 98vw;
+}
+
+.win-modal > .modal-contents {
+    max-height: 65vh;
+    overflow-y: auto;
+    padding: 24px;
+}
+
+.win-modal > .modal-buttons {
+    background-color: var(--input-act-bg);
+    border-top: 1px solid var(--input-act-bottom-border-color);
+    padding: 24px;
+    display: flex;
+    gap: 8px;
+}
+
+.win-modal > .modal-buttons > .win-button {
+    top: 0;
+    flex-grow: 1;
+}
+
+.win-modal.visible {
+    pointer-events: all;
+    top: 50%;
+    opacity: 1;
+}
+
+.win-modal h1:first-of-type {
+    font-size: 24px;
+    margin-top: 0;
+}
+
+#wininternal--el-lightbox {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #00000051;
+    z-index: 9999;
+    transition: .2s ease;
+}

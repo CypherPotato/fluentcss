@@ -1,0 +1,85 @@
+.win-check {
+    font-family: var(--font-family);
+    display: inline-block;
+    user-select: none;
+}
+
+.win-check > input {
+    display: none;
+}
+
+.win-check::before {
+    font-family: 'Line Awesome Free';
+    font-weight: 900;
+    text-indent: 2px;
+    display: inline-block;
+    position: relative;
+    content: '\f00c';
+    background-color: var(--input-def-bg);
+    border: 1px solid var(--check-def-border-color);
+    color: transparent;
+    border-radius: var(--control-border-radius);
+    width: 18px;
+    height: 18px;
+    top: 1px;
+    margin-right: 6px;
+    opacity: 1;
+    transition: var(--w-transition);
+}
+
+.win-check:has(input:checked)::before {
+    background-color: var(--accent-color);
+    border-color: transparent;
+    color: white;
+}
+
+.win-check:has(input:checked):hover::before {
+    opacity: .85;
+}
+
+.win-check:has(input:checked):active::before {
+    opacity: .5;
+}
+
+.win-check:hover::before {
+    background-color: var(--input-hov-bg);
+}
+
+.win-check:active::before {
+    background-color: var(--input-act-bg);
+    border-color: var(--input-act-border-color);
+}
+
+.win-check:has(input:disabled) {
+    pointer-events: none;
+}
+
+.win-check:has(input:disabled)::before {
+    opacity: .4;
+}
+
+.win-check:has(input[type='radio'])::before {
+    content: '';
+    border-radius: 15px;
+    background-color: var(--input-def-bg);
+    border: 1px solid var(--check-def-border-color);
+    box-sizing: border-box;
+    top: 4px;
+    width: 20px;
+    height: 20px;
+    ;
+}
+
+.win-check:has(input[type='radio']):hover::before {
+    background-color: var(--input-hov-bg);
+}
+
+.win-check:has(input[type='radio']):active::before {
+    background-color: var(--accent-color);
+    border: 3px solid var(--input-def-bg);
+}
+
+.win-check:has(input[type='radio']:checked)::before {
+    color: transparent;
+    border: 5px solid var(--accent-color);
+}

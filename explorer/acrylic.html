@@ -1,0 +1,81 @@
+<div class="win-nav-dashboard">
+    <include name="__nav"></include>
+    <main class="immersive-box">
+        <div class="app-contents">
+            <section>
+                <h3>
+                    Acrylic panes
+                </h3>
+                <div class="win-viewbox">
+                    <div class="viewbox-body" style="display: flex; gap: 20px; background-image: url('/etc/example-wallpaper.jpg'); background-size: cover;">
+                        <style>
+                            .example--box {
+                                display: grid;
+                                place-content: center;
+                                width: 200px;
+                                height: 200px;
+                                text-align: center;
+                            }
+                        </style>
+                        <div class="win-acrylic example--box">
+                            Acrylic panel
+                        </div>
+                        <div class="win-acrylic win-posz-1 example--box">
+                            Acrylic panel with pos-z 1 shadow
+                        </div>
+                    </div>
+                    <div class="viewbox-footer">
+                        <p>
+                            Acrylic border radius is optional. The base component <code>win-acrylic</code> doens't carry border-radius, size or other layout properties.
+                        </p>
+                        <p>
+                            You must include an reference to the acrylic mask PNG in <code>main.css</code>.
+                        </p>
+                        <pre><code class="language-html">
+                            <xmp>
+                                <div class="win-acrylic">
+                                    Acrylic panel
+                                </div>
+                            </xmp>
+                        </code></pre>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <h3>
+                    Mica panes
+                </h3>
+                <div class="win-viewbox">
+                    <div class="viewbox-body" style="display: flex; gap: 20px; background-image: url('/etc/example-wallpaper-2.jpg'); background-size: cover;">
+                        <style>
+                            .example--box {
+                                display: grid;
+                                place-content: center;
+                                width: 200px;
+                                height: 250px;
+                                text-align: center;
+                            }
+                        </style>
+                        <div class="win-mica example--box">
+                            Mica panel
+                        </div>
+                        <div class="win-mica active example--box">
+                            Mica panel active
+                        </div>
+                    </div>
+                    <div class="viewbox-footer">
+                        <pre><code class="language-html">
+                            <xmp>
+                                <div class="win-acrylic">
+                                    Acrylic panel
+                                </div>
+                            </xmp>
+                        </code></pre>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+</div>
+
+</html>
