@@ -1,13 +1,37 @@
-<div class="win-nav-dashboard">
-    <include name="__nav"></include>
-    <main class="immersive-box">
-        <div class="app-contents">
-            <section>
-                <h3>
-                    Simple context menu
-                </h3>
-                <div class="win-viewbox">
-                    <div class="viewbox-body">
+<div class="app-contents">
+    <section>
+        <h3>
+            Simple context menu
+        </h3>
+        <div class="win-viewbox">
+            <div class="viewbox-body">
+                <script>
+                    function openCtxMenu1() {
+                        win.contextMenu([
+                            {
+                                onclick: () => {
+                                    alert("hello");
+                                },
+                                text: "Show alert",
+                                img: "/etc/icons/star.svg"
+                            },
+                            {
+                                enabled: false,
+                                onclick: () => {
+                                    alert("hello");
+                                },
+                                text: "Disabled item"
+                            }
+                        ]);
+                    }
+                </script>
+                <button onclick="openCtxMenu1()" class="win-button">
+                    Open context menu
+                </button>
+            </div>
+            <div class="viewbox-footer">
+                <pre><code class="language-html">
+                    <xmp>
                         <script>
                             function openCtxMenu1() {
                                 win.contextMenu([
@@ -31,40 +55,9 @@
                         <button onclick="openCtxMenu1()" class="win-button">
                             Open context menu
                         </button>
-                    </div>
-                    <div class="viewbox-footer">
-                        <pre><code class="language-html">
-                            <xmp>
-                                <script>
-                                    function openCtxMenu1() {
-                                        win.contextMenu([
-                                            {
-                                                onclick: () => {
-                                                    alert("hello");
-                                                },
-                                                text: "Show alert",
-                                                img: "/etc/icons/star.svg"
-                                            },
-                                            {
-                                                enabled: false,
-                                                onclick: () => {
-                                                    alert("hello");
-                                                },
-                                                text: "Disabled item"
-                                            }
-                                        ]);
-                                    }
-                                </script>
-                                <button onclick="openCtxMenu1()" class="win-button">
-                                    Open context menu
-                                </button>
-                            </xmp>
-                        </code></pre>
-                    </div>
-                </div>
-            </section>
+                    </xmp>
+                </code></pre>
+            </div>
         </div>
-    </main>
+    </section>
 </div>
-
-</html>

@@ -2,7 +2,7 @@
 
 include 'comp.php';
 
-define('VERSION', 'v0.1');
+define('VERSION', 'v0.1.2');
 
 compile(__DIR__ . '/build', true, false);
 compile(__DIR__ . '/dist/' . VERSION . '/', false, true);

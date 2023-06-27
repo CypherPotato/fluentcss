@@ -40,14 +40,23 @@ if (APP['DEV']) {
     <script src="/etc/prism.js"></script>
 </head>
 
-<body id="app">
+<body>
+    <div class="win-nav-dashboard" style="height: 100%;">
+        <include name="__nav"></include>
+        <main class="immersive-box">
+        </main>
+    </div>
 </body>
 
 <footer>
     <script type="text/javascript">
+        const container = document.querySelector("body");
+        const dashContainer = document.querySelector("main");
         window.PlanifoliaSettings = {
             basePath: "/explorer/",
-            container: document.querySelector("#app"),
+            onNavigating: () => {
+                dashContainer.scrollTop = 0;
+            },
             onNavigated: () => {
                 Prism.highlightAll();
                 document.querySelectorAll("nav > .nav-link").forEach(e => {
@@ -58,7 +67,8 @@ if (APP['DEV']) {
                 });
             }
         };
-        window.Planifolia.initializeAutoRouter();
+        window.Planifolia.fetchComponents(container);
+        window.Planifolia.contentTo(dashContainer, '/index');
         window.Prism = window.Prism || {};
         window.Prism.manual = true;
     </script>

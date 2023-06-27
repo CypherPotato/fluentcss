@@ -3,6 +3,43 @@ var componentCache = [];
 window.$insecureEval = eval;
 
 window.Planifolia = {
+    fetchTo: (target, path) => {
+        if (window.PlanifoliaSettings.onNavigating !== undefined) {
+            window.PlanifoliaSettings.onNavigating();
+        }
+        __isNavigating = true;
+
+        var basePath = (window.PlanifoliaSettings.basePath ?? "/view/");
+        var routerFile = window.location.origin + basePath + path + ".html";
+        fetch(routerFile)
+            .then(res => res.text())
+            .then(text => {
+                let newElement = Planifolia.replaceElementBy(target, text);
+                window.Planifolia.fetchComponents(newElement);
+            });
+    },
+    contentTo: (target, path) => {
+        if (window.PlanifoliaSettings.onNavigating !== undefined) {
+            window.PlanifoliaSettings.onNavigating();
+        }
+        __isNavigating = true;
+
+        var basePath = (window.PlanifoliaSettings.basePath ?? "/view/");
+        var routerFile = window.location.origin + basePath + path + ".html";
+        fetch(routerFile)
+            .then(res => res.text())
+            .then(text => {
+                target.innerHTML = text;
+                window.Planifolia.fetchComponents(target);
+            });
+    },
+    replaceElementBy: (element, text) => {
+        let newElement = document.createElement(null);
+        newElement.innerHTML = text;
+        newElement = newElement.firstChild;
+        element.replaceWith(newElement);
+        return element;
+    },
     routerFetchPage: () => {
         var path = window.location.hash.replace("#/", "");
 
@@ -45,8 +82,8 @@ window.Planifolia = {
                 });
         }, delay);
     },
-    fetchComponents: () => {
-        var exts = window.PlanifoliaSettings.container.querySelectorAll("include");
+    fetchComponents: (target) => {
+        var exts = target.querySelectorAll("include");
         if (exts.length == 0) {
             if (__isNavigating && window.PlanifoliaSettings.onNavigated !== undefined) {
                 window.PlanifoliaSettings.onNavigated();
@@ -82,15 +119,18 @@ window.Planifolia = {
                 const attrRgx = new RegExp('(?<!@)@' + attrName + '\\b', 'gi');
                 text = text.replace(attrRgx, attrValue);
             }
-            if (e.parentNode != null) {
-                e.outerHTML = text;
-            }
-            window.Planifolia.fetchElements();
-            window.Planifolia.fetchComponents();
+
+            let newElement = document.createElement(null);
+            newElement.innerHTML = text;
+            newElement = newElement.firstChild;
+            e.replaceWith(newElement);
+
+            window.Planifolia.fetchElements(newElement);
+            window.Planifolia.fetchComponents(newElement);
         });
     },
-    fetchElements: () => {
-        window.PlanifoliaSettings.container.querySelectorAll("script").forEach(s => {
+    fetchElements: (target) => {
+        target.querySelectorAll("script").forEach(s => {
             s.remove();
             try {
                 window.$insecureEval(s.innerText);
@@ -99,7 +139,7 @@ window.Planifolia = {
             }
         });
         if (window.PlanifoliaSettings.autoRewriteLinks ?? true) {
-            window.PlanifoliaSettings.container.querySelectorAll("a").forEach(e => {
+            target.querySelectorAll("a").forEach(e => {
                 let href = e.getAttribute("href");
                 if (href != null && href.startsWith("/") && !href.startsWith("/#/")) {
                     e.setAttribute("href", "/#" + href);

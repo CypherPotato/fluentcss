@@ -96,6 +96,8 @@
 
 .win-nav-dashboard > nav .nav-link {
     position: relative;
+    background-color: transparent;
+    text-align: left;
     font-family: var(--font-family);
     width: 100%;
     display: block;

@@ -1,13 +1,35 @@
-<div class="win-nav-dashboard">
-    <include name="__nav"></include>
-    <main class="immersive-box">
-        <div class="app-contents">
-            <section>
-                <h3>
-                    Modal object
-                </h3>
-                <div class="win-viewbox">
-                    <div class="viewbox-body">
+<div class="app-contents">
+    <section>
+        <h3>
+            Modal object
+        </h3>
+        <div class="win-viewbox">
+            <div class="viewbox-body">
+                <div class="win-modal" id="myModal">
+                    <div class="modal-contents">
+                        <h1>
+                            Modal title
+                        </h1>
+                        <p>
+                            And a paragraph!
+                        </p>
+                    </div>
+                    <div class="modal-buttons">
+                        <button class="win-button accent" onclick="win.dismissModal()">
+                            OK
+                        </button>
+                        <button class="win-button" onclick="win.dismissModal()">
+                            Cancel
+                        </button>
+                    </div>
+                </div>
+                <button onclick="win.modal('#myModal')" class="win-button">
+                    Show modal
+                </button>
+            </div>
+            <div class="viewbox-footer">
+                <pre><code class="language-html">
+                    <xmp>
                         <div class="win-modal" id="myModal">
                             <div class="modal-contents">
                                 <h1>
@@ -29,42 +51,46 @@
                         <button onclick="win.modal('#myModal')" class="win-button">
                             Show modal
                         </button>
+                    </xmp>
+                </code></pre>
+            </div>
+        </div>
+    </section>
+    <section>
+        <h3>
+            Big modal, with more than two buttons
+        </h3>
+        <div class="win-viewbox">
+            <div class="viewbox-body">
+                <div class="win-modal big" id="openWork">
+                    <div class="modal-contents">
+                        <h1>
+                            Save your work?
+                        </h1>
+                        <label class="win-check">
+                            <input type="checkbox" name="check">
+                            Save content to cloud
+                        </label>
                     </div>
-                    <div class="viewbox-footer">
-                        <pre><code class="language-html">
-                            <xmp>
-                                <div class="win-modal" id="myModal">
-                                    <div class="modal-contents">
-                                        <h1>
-                                            Modal title
-                                        </h1>
-                                        <p>
-                                            And a paragraph!
-                                        </p>
-                                    </div>
-                                    <div class="modal-buttons">
-                                        <button class="win-button accent" onclick="win.dismissModal()">
-                                            OK
-                                        </button>
-                                        <button class="win-button" onclick="win.dismissModal()">
-                                            Cancel
-                                        </button>
-                                    </div>
-                                </div>
-                                <button onclick="win.modal('#myModal')" class="win-button">
-                                    Show modal
-                                </button>
-                            </xmp>
-                        </code></pre>
+                    <div class="modal-buttons">
+                        <button class="win-button accent" onclick="win.dismissModal()">
+                            Save
+                        </button>
+                        <button class="win-button" onclick="win.dismissModal()">
+                            Don't save
+                        </button>
+                        <button class="win-button" onclick="win.dismissModal()">
+                            Cancel
+                        </button>
                     </div>
                 </div>
-            </section>
-            <section>
-                <h3>
-                    Big modal, with more than two buttons
-                </h3>
-                <div class="win-viewbox">
-                    <div class="viewbox-body">
+                <button onclick="win.modal('#openWork')" class="win-button">
+                    Show modal
+                </button>
+            </div>
+            <div class="viewbox-footer">
+                <pre><code class="language-html">
+                    <xmp>
                         <div class="win-modal big" id="openWork">
                             <div class="modal-contents">
                                 <h1>
@@ -90,42 +116,9 @@
                         <button onclick="win.modal('#openWork')" class="win-button">
                             Show modal
                         </button>
-                    </div>
-                    <div class="viewbox-footer">
-                        <pre><code class="language-html">
-                            <xmp>
-                                <div class="win-modal big" id="openWork">
-                                    <div class="modal-contents">
-                                        <h1>
-                                            Save your work?
-                                        </h1>
-                                        <label class="win-check">
-                                            <input type="checkbox" name="check">
-                                            Save content to cloud
-                                        </label>
-                                    </div>
-                                    <div class="modal-buttons">
-                                        <button class="win-button accent" onclick="win.dismissModal()">
-                                            Save
-                                        </button>
-                                        <button class="win-button" onclick="win.dismissModal()">
-                                            Don't save
-                                        </button>
-                                        <button class="win-button" onclick="win.dismissModal()">
-                                            Cancel
-                                        </button>
-                                    </div>
-                                </div>
-                                <button onclick="win.modal('#openWork')" class="win-button">
-                                    Show modal
-                                </button>
-                            </xmp>
-                        </code></pre>
-                    </div>
-                </div>
-            </section>
+                    </xmp>
+                </code></pre>
+            </div>
         </div>
-    </main>
+    </section>
 </div>
-
-</html>
