@@ -7,11 +7,6 @@ define(
     ]
 );
 
-define(
-    'VER',
-    '0.1'
-);
-
 function applyConditions($content)
 {
     foreach (REPLACEMENTS as $repKey => $repVal) {

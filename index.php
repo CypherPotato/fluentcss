@@ -1,5 +1,6 @@
 <?php
 
+$use_version = 'v0.1.2';
 $app = parse_ini_file("settings.ini");
 define('APP', $app);
 
@@ -13,8 +14,8 @@ if (APP['DEV']) {
     $css_dist = substr($css_dist, strlen(__DIR__));
     $js_dist = substr($js_dist, strlen(__DIR__));
 } else {
-    $css_dist = '/dist/latest/fluent-css.css';
-    $js_dist = '/dist/latest/fluent-css.js';
+    $css_dist = '/dist/' . $use_version . '/fluent-css.css';
+    $js_dist = '/dist/' . $use_version . '/fluent-css.js';
 }
 ?>
 
@@ -34,8 +35,8 @@ if (APP['DEV']) {
     </script>
 
     <link rel="stylesheet" href="<?= $css_dist ?>">
-    <link rel="stylesheet" href="/etc/prism.css">
-    <script src="/etc/planifolia.js"></script>
+    <link rel="stylesheet" href="/etc/prism.css?v=<?= $use_version ?>">
+    <script src="/etc/planifolia.js?v=<?= $use_version ?>"></script>
     <script src="<?= $js_dist ?>"></script>
     <script src="/etc/prism.js"></script>
 </head>
