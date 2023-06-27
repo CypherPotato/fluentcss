@@ -43,12 +43,15 @@
     height: calc(100% - var(--main-offset-top));
 }
 
+.win-nav-dashboard > main > div.app-contents {
+    animation: win-dash-ani 0.2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
 .win-nav-dashboard > main:not(.immersive-box) > div.app-contents {
     margin-inline: auto;
     padding-block: 30px;
     min-height: 100%;
     max-width: 1000px;
-    
 }
 
 .win-nav-dashboard > main.immersive-box {
@@ -179,4 +182,18 @@
     font-size: .9rem;
     font-weight: 400;
     margin-block: 0;
+}
+
+@keyframes win-dash-ani {
+    0% {
+        -webkit-transform: translateY(60px);
+        transform: translateY(60px);
+        opacity: .2;
+    }
+
+    100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+        opacity: 1;
+    }
 }

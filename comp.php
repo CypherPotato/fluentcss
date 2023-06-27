@@ -7,6 +7,11 @@ define(
     ]
 );
 
+define(
+    'VER',
+    '0.1'
+);
+
 function applyConditions($content)
 {
     foreach (REPLACEMENTS as $repKey => $repVal) {
@@ -22,21 +27,27 @@ function minifyClike($css)
     return $css;
 }
 
-function compile($deleteAssets = false)
+function compile($to_dir, $deleteAssets = false, $is_dist = false)
 {
     if ($deleteAssets) {
-        foreach (glob(__DIR__ . "/dist/*.{css,js}", GLOB_BRACE) as $file) {
+        foreach (glob($to_dir . "/*.{css,js}", GLOB_BRACE) as $file) {
             unlink($file);
         }
     }
 
-    if (!is_dir(__DIR__ . '/dist')) {
-        mkdir(__DIR__ . '/dist');
+    if (!is_dir($to_dir)) {
+        mkdir($to_dir, 0777, true);
     }
 
     $v = uniqid();
     $files = glob(__DIR__ . '/src/styles/{*,*/*,*/*/*,*/*/*/*}.css', GLOB_BRACE);
-    $dist = __DIR__ . '/dist/win3-ui.' . $v . '.css';
+
+    if ($is_dist) {
+        $dist = $to_dir . '/fluent-css.css';
+    } else {
+        $dist = $to_dir . '/fluent-css.' . $v . '.css';
+    }
+
     $output = '/*Copyright 2023 CypherPotato FluentCSS - MIT licensed*/';
 
     foreach ($files as $file) {
@@ -49,7 +60,13 @@ function compile($deleteAssets = false)
     file_put_contents($dist, $output);
 
     $files = glob(__DIR__ . '/src/script/{*,*/*,*/*/*,*/*/*/*}.js', GLOB_BRACE);
-    $dist = __DIR__ . '/dist/win3-ui.' . $v . '.js';
+    
+    if ($is_dist) {
+        $dist = $to_dir . '/fluent-css.js';
+    } else {
+        $dist = $to_dir . '/fluent-css.' . $v . '.js';
+    }
+
     $output = '/*Copyright 2023 CypherPotato FluentCSS - MIT licensed*/';
 
     foreach ($files as $file) {

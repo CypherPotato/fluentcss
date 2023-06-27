@@ -5,14 +5,17 @@ define('APP', $app);
 
 if (APP['DEV']) {
     require 'comp.php';
-    compile(true);
+    compile(__DIR__ . '/build', true, false);
+
+    $css_dist = glob(__DIR__ . "/build/*.css")[0];
+    $js_dist = glob(__DIR__ . "/build/*.js")[0];
+
+    $css_dist = substr($css_dist, strlen(__DIR__));
+    $js_dist = substr($js_dist, strlen(__DIR__));
+} else {
+    $css_dist = '/dist/latest/fluent-css.css';
+    $js_dist = '/dist/latest/fluent-css.js';
 }
-
-$css_dist = glob(__DIR__ . "/dist/*.css")[0];
-$js_dist = glob(__DIR__ . "/dist/*.js")[0];
-
-$css_dist = substr($css_dist, strlen(__DIR__));
-$js_dist = substr($js_dist, strlen(__DIR__));
 ?>
 
 <!DOCTYPE html>
