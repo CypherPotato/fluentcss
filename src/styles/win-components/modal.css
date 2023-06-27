@@ -13,7 +13,7 @@
     z-index: 10000;
     overflow: hidden;
     box-shadow: var(--drop-shadow-xl);
-    transition: .15s ease-out;
+    transition: .15s cubic-bezier(0.250, 0.460, 0.450, 0.940);
 }
 
 .win-modal.big {
@@ -57,7 +57,7 @@
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: #00000051;
+    background-color: #00000081;
     z-index: 9999;
-    transition: .2s ease;
+    transition: .2s cubic-bezier(0.250, 0.460, 0.450, 0.940);
 }

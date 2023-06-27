@@ -10,6 +10,10 @@
     overflow-x: hidden;
 }
 
+.win-nav-dashboard {
+    background-color: white;
+}
+
 .win-nav-dashboard.negative {
     background-color: var(--input-def-bg);
 }
@@ -20,6 +24,7 @@
     top: 0;
     width: var(--nav-width);
     height: 100%;
+    overflow-y: scroll;
 }
 
 .win-nav-dashboard > main {

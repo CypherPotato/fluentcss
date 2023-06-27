@@ -21,6 +21,7 @@
     z-index: 99999999;
     opacity: 0;
     gap: 4px;
+    animation: var(--w-slide-down-ani);
     transition: var(--w-transition);
 }
 

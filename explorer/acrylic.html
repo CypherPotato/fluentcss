@@ -66,8 +66,61 @@
                     <div class="viewbox-footer">
                         <pre><code class="language-html">
                             <xmp>
-                                <div class="win-acrylic">
-                                    Acrylic panel
+                                <div class="win-mica">
+                                    Mica panel
+                                </div>
+                                <div class="win-mica active">
+                                    Mica panel active
+                                </div>
+                            </xmp>
+                        </code></pre>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <h3>
+                    Toggle Mica effects
+                </h3>
+                <div class="win-viewbox">
+                    <div class="viewbox-body" style="display: flex; gap: 20px; background-image: url('/etc/example-wallpaper-2.jpg'); background-size: cover;">
+                        <style>
+                            .example--box-2 {
+                                display: grid;
+                                place-content: center;
+                                width: 100%;
+                                height: 250px;
+                                text-align: center;
+                            }
+                        </style>
+                        <div class="win-mica focusable example--box-2" id="mica-example">
+                            <p>
+                                This is an mica panel. Toggle it to make it active.
+                            </p>
+                            <script>
+                                function toggleMica() {
+                                    document.getElementById("mica-example").classList.toggle("active");
+                                }
+                            </script>
+                            <button onclick="toggleMica()" class="win-button">
+                                Toggle Mica state
+                            </button>
+                        </div>
+                    </div>
+                    <div class="viewbox-footer">
+                        <pre><code class="language-html">
+                            <xmp>
+                                <div class="win-mica focusable" id="mica-example">
+                                    <p>
+                                        This is an mica panel. Toggle it to make it active.
+                                    </p>
+                                    <script>
+                                        function toggleMica() {
+                                            document.getElementById("mica-example").classList.toggle("active");
+                                        }
+                                    </script>
+                                    <button onclick="toggleMica()" class="win-button">
+                                        Toggle Mica state
+                                    </button>
                                 </div>
                             </xmp>
                         </code></pre>
