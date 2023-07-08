@@ -7,32 +7,6 @@ It was written in plain CSS and vanilla Javascript. No SCSS, pre-compilers, Node
 
 You can visit the interactive gallery [here](https://fluentcss.project-principium.dev/#/).
 
-## Building
-
-You must have PHP installed in your machine to build FluentCSS or you can simply clone that repository and grab the components you want to use inside the `/src` folder.
-Just make sure to include `main.css` on it too.
-
-To build it using PHP, you can:
-
-```
-> php .\build.php
-```
-
-And the distribution JS and CSS will be copied to `/dist` directory.
-
-You can remove the `.win-` prefixes, or change it, by changing this line on `comp.php`:
-
-```php
-<?php
-
-define(
-    'REPLACEMENTS',
-    [
-        'win-' => 'replacement-'
-    ]
-);
-```
-
 ## Credits
 
 None of the designs here were made by me. I just made the CSS classes and the Javascript to perfectly
