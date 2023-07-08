@@ -1,0 +1,24 @@
+[
+    {
+        "compilationMode": "SCSS",
+        "label": "Main SCSS files",
+        "include": [
+            "./src/styles"
+        ],
+        "output": [
+            "./dist/latest/fluentcss.css",
+            "./dist/v0.1.3/fluentcss.css"
+        ]
+    },
+    {
+        "compilationMode": "JS",
+        "label": "Main JS files",
+        "include": [
+            "./src/script"
+        ],
+        "output": [
+            "./dist/latest/fluentcss.js",
+            "./dist/v0.1.3/fluentcss.js"
+        ]
+    }
+]

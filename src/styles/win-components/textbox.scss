@@ -1,0 +1,60 @@
+.win-textbox {
+    position: relative;
+    display: inline-block;
+    background-color: var(--input-def-bg);
+    color: var(--def-fr);
+    border: 1px solid var(--input-def-border-color);
+    border-bottom-color: var(--input-def-bottom-border-color);
+    outline: none;
+    overflow: hidden;
+    border-radius: var(--control-border-radius);
+
+    &:hover {
+        background-color: var(--input-hov-bg);
+        color: var(--hov-fr);
+        border: 1px solid var(--input-hov-border-color);
+        border-bottom-color: var(--input-hov-bottom-border-color);
+
+        >img {
+            opacity: .6;
+        }
+    }
+
+    &:has(input:focus),
+    &:has(textarea:focus) {
+        background-color: white;
+        color: var(--act-fr);
+        border: 1px solid var(--input-act-border-color);
+        border-bottom-color: var(--accent-color);
+
+        >img {
+            opacity: 1;
+        }
+    }
+
+    &:has(img)>input,
+    &:has(textarea)>input {
+        padding-left: 32px;
+    }
+
+    >img {
+        position: absolute;
+        left: 7px;
+        top: 6px;
+        height: 16px;
+        width: auto;
+        opacity: .5;
+    }
+
+    >input,
+    >textarea {
+        background-color: transparent;
+        border: none;
+        outline: none;
+        padding: 6px 10px;
+        width: 100%;
+        height: 100%;
+        font-family: var(--font-family);
+        border-radius: var(--control-border-radius);
+    }
+}

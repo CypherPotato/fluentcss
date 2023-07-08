@@ -1,0 +1,16 @@
+@import "../mixins.scss";
+
+.win-acrylic {
+    @include acrylic-default;
+    position: relative;
+}
+
+.win-mica {
+    @include mica-default;
+    transition: .25s ease-out;
+
+    &.active {
+        background-color: var(--control-bg);
+        border-color: var(--control-border-color);
+    }
+}

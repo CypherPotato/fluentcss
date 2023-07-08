@@ -15,15 +15,15 @@
     user-select: none;
     text-align: center;
     transition: var(--w-transition);
-}
 
-.win-hyperlink:hover {
-    background-color: var(--input-hov-bg);
-    border-color: var(--input-hov-bg);
-}
+    &:hover {
+        background-color: var(--input-hov-bg);
+        border-color: var(--input-hov-bg);
+    }
 
-.win-hyperlink:active {
-    background-color: var(--input-act-bg);
-    border-color: var(--input-act-bg);
-    opacity: .7;
+    &:active {
+        background-color: var(--input-act-bg);
+        border-color: var(--input-act-bg);
+        opacity: .7;
+    }
 }

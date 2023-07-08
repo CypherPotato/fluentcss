@@ -1,0 +1,79 @@
+@import "../mixins.scss";
+
+@mixin accent-mixin {
+    background-color: var(--accent-color);
+    color: white;
+    border: 1px solid #ffffff21;
+    border-bottom-color: #00000041;
+    opacity: 1;
+}
+
+.win-button {
+    @include control-defaults;
+    
+    display: inline-block;
+    border-bottom-color: var(--input-def-bottom-border-color);
+    outline: none;
+    border-radius: var(--control-border-radius);
+    padding: 0 12px;
+    height: 32px;
+    line-height: 32px;
+    user-select: none;
+    text-decoration: none;
+    text-align: center;
+    cursor: default;
+    width: fit-content;
+    transition: var(--w-transition);
+
+    &:hover {
+        background-color: var(--input-hov-bg);
+        color: var(--hov-fr);
+        border: 1px solid var(--input-hov-border-color);
+        border-bottom-color: var(--input-hov-bottom-border-color);
+    }
+
+    &:active {
+        background-color: var(--input-act-bg);
+        color: var(--act-fr);
+        border: 1px solid var(--input-act-border-color);
+        border-bottom-color: var(--input-act-bottom-border-color);
+    }
+
+    &:disabled,
+    &[disabled] {
+        opacity: .6;
+        pointer-events: none;
+    }
+
+    >i {
+        position: relative;
+        font-size: 17px;
+        top: 1px;
+    }
+
+    &.accent {
+        @include accent-mixin;
+
+        &:hover {
+            opacity: .8;
+        }
+
+        &:active {
+            opacity: .6;
+            box-shadow: none;
+        }
+    }
+}
+
+label.win-button:has(input:checked) {
+    @include accent-mixin;
+}
+
+label.win-button:has(input)>input {
+    display: none;
+}
+
+select.win-button {
+    text-align: left;
+    width: min-content;
+}

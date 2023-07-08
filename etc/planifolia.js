@@ -7,6 +7,9 @@ window.Planifolia = {
         if (window.PlanifoliaSettings.onNavigating !== undefined) {
             window.PlanifoliaSettings.onNavigating();
         }
+        if (window.PlanifoliaSettings.onFetch !== undefined) {
+            window.PlanifoliaSettings.onFetch(path);
+        }
         __isNavigating = true;
 
         var basePath = (window.PlanifoliaSettings.basePath ?? "/view/");
@@ -16,11 +19,15 @@ window.Planifolia = {
             .then(text => {
                 let newElement = Planifolia.replaceElementBy(target, text);
                 window.Planifolia.fetchComponents(newElement);
+                window.Planifolia.fetchElements(newElement);
             });
     },
     contentTo: (target, path) => {
         if (window.PlanifoliaSettings.onNavigating !== undefined) {
             window.PlanifoliaSettings.onNavigating();
+        }
+        if (window.PlanifoliaSettings.onFetch !== undefined) {
+            window.PlanifoliaSettings.onFetch(path);
         }
         __isNavigating = true;
 
@@ -31,6 +38,7 @@ window.Planifolia = {
             .then(text => {
                 target.innerHTML = text;
                 window.Planifolia.fetchComponents(target);
+                window.Planifolia.fetchElements(target);
             });
     },
     replaceElementBy: (element, text) => {
@@ -79,6 +87,7 @@ window.Planifolia = {
                 .then(text => {
                     window.PlanifoliaSettings.container.innerHTML = text;
                     window.Planifolia.fetchComponents(window.PlanifoliaSettings.container);
+                    window.Planifolia.fetchElements(window.PlanifoliaSettings.container);
                 });
         }, delay);
     },

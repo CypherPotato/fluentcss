@@ -1,0 +1,34 @@
+.win-user-img {
+    border: var(--def-fr);
+    object-fit: cover;
+
+    &.xs {
+        width: 16px;
+        height: 16px;
+        border-radius: 16px;
+    }
+
+    &.sm {
+        width: 26px;
+        height: 26px;
+        border-radius: 26px;
+    }
+
+    &.md {
+        width: 36px;
+        height: 36px;
+        border-radius: 36px;
+    }
+
+    &.lg {
+        width: 46px;
+        height: 46px;
+        border-radius: 46px;
+    }
+
+    &.xl {
+        width: 64px;
+        height: 64px;
+        border-radius: 64px;
+    }
+}

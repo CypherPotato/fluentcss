@@ -3,7 +3,8 @@ pre {
 }
 
 code[class*="language-"] {
-    font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-family: Consolas, "Liberation Mono", "Courier New", monospace;
+    font-size: 13px;
     color: #000;
 }
 
@@ -53,7 +54,7 @@ code[class*="language-"] {
 }
 
 .token.tag {
-    color: #B80000;
+    color: #7e1212;
 }
 
 .token.attr-name {
@@ -61,7 +62,7 @@ code[class*="language-"] {
 }
 
 .token.attr-value {
-    color: #3200FF;
+    color: #0000ff;
 }
 
 code[class*="language-css"] {

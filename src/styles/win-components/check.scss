@@ -1,0 +1,125 @@
+.win-check {
+    position: relative;
+    font-family: var(--font-family);
+    display: inline-block;
+    user-select: none;
+
+    >input {
+        display: none;
+    }
+
+    &:not(:has(input[type='radio']) )::after {
+        position: absolute;
+        display: block;
+        content: " ";
+        border-bottom: 1px solid #fff;
+        border-right: 1px solid #fff;
+        left: 4px;
+        bottom: 9px;
+        width: 0;
+        height: 0;
+        transform: rotate(45deg);
+        transform-origin: bottom left; 
+    }
+
+    &::before {
+        font-weight: 900;
+        text-indent: 2px;
+        display: inline-block;
+        position: relative;
+        content: ' ';
+        background-color: var(--input-def-bg);
+        border: 1px solid var(--check-def-border-color);
+        color: transparent; 
+        border-radius: var(--control-border-radius);
+        width: 18px;
+        height: 18px; 
+        top: 5px;
+        margin-right: 6px;
+        opacity: 1;
+        transition: var(--w-transition);
+    }
+
+    &:hover::before {
+        background-color: var(--input-hov-bg);
+    }
+
+    &:active::before {
+        background-color: var(--input-act-bg);
+        border-color: var(--input-act-border-color); 
+    }
+
+    &:has(input:checked) {
+
+        &:hover::before {
+            opacity: .85;
+        }
+
+        &::after {
+            animation: check-open;
+            animation-timing-function: ease-out;
+            animation-fill-mode: forwards;
+            animation-iteration-count: 1;
+            animation-duration: .25s;
+        }
+
+        &::before {
+            background-color: var(--accent-color);
+            border-color: transparent;
+            color: white;
+        }
+
+        &:active::before {
+            opacity: .5;
+        }
+    }
+
+    &:has(input[type='radio']) {
+        &::before {
+            content: '';
+            border-radius: 15px;
+            background-color: var(--input-def-bg);
+            border: 1px solid var(--check-def-border-color);
+            box-sizing: border-box;
+            top: 4px;
+            width: 20px;
+            height: 20px;
+        }
+
+        &:hover::before {
+            background-color: var(--input-hov-bg);
+        }
+
+        &:active::before {
+            background-color: var(--accent-color);
+            border: 3px solid var(--input-def-bg);
+        }
+    }
+
+    &:has(input[type='radio']:checked)::before {
+        color: transparent;
+        border: 5px solid var(--accent-color);
+    }
+
+    &:has(input:disabled) {
+        opacity: .6;
+        pointer-events: none;
+    }
+}
+
+@keyframes check-open {
+    0% {
+        width: 0;
+        height: 0;
+    }
+
+    50% {
+        width: 4px;
+        height: 0;
+    }
+
+    100% {
+        width: 4px;
+        height: 10px;
+    }
+}

@@ -1,0 +1,34 @@
+.win-input-box {
+    display: grid;
+    grid-template-columns: 48px auto 200px;
+    align-items: center;
+    padding: 0 18px;
+    height: 69px;
+    border-radius: var(--control-border-radius);
+    background-color: var(--input-def-bg);
+    color: var(--def-fr);
+    border: 1px solid var(--input-def-border-color);
+    margin-bottom: 4px;
+
+    p {
+        margin: 0;
+        width: 100%;
+
+        i {
+            display: block;
+            font-style: normal;
+            color: var(--dim-fr);
+            margin-top: 3px;
+            font-size: 12px;
+        }
+    }
+
+    img {
+        width: 21px;
+        height: 21px;
+    }
+
+    &>*:last-child {
+        margin-left: auto;
+    }
+}

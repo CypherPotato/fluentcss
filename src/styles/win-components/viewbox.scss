@@ -1,0 +1,16 @@
+.win-viewbox {
+    border: 1px solid var(--input-def-border-color);
+    border-radius: var(--control-border-radius);
+    overflow: hidden;
+
+    >.viewbox-body {
+        background-color: white;
+        padding: 16px;
+    }
+
+    >.viewbox-footer {
+        background-color: var(--menu-hov-bg);
+        padding: 16px;
+        border-top: 1px solid var(--input-def-border-color);
+    }
+}

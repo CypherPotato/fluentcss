@@ -1,0 +1,219 @@
+@import "..\\scrollbar.scss";
+
+:root {
+    --nav-width: 300px;
+    --main-block-pad: 20px;
+    --main-offset-top: 30px;
+}
+
+.win-nav-dashboard {
+    background-color: white;
+    position: relative;
+    height: 100%;
+    overflow-x: hidden;
+
+    &.negative {
+        background-color: var(--input-def-bg);
+    }
+
+    >nav {
+        @include scrollbar;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: var(--nav-width);
+        height: 100%;
+        padding: 30px 8px;
+        overflow-y: scroll;
+
+        .nav-item {
+            width: 100%;
+            padding: 0 12px;
+            margin-bottom: 4px;
+        }
+
+        .nav-link {
+            position: relative;
+            background-color: transparent;
+            text-align: left;
+            font-family: var(--font-family);
+            width: 100%;
+            display: block;
+            padding: 0 12px;
+            border-radius: var(--control-border-radius);
+            line-height: 36px;
+            border: none;
+            margin-bottom: 4px;
+            text-decoration: none;
+            color: var(--def-fr);
+            cursor: default;
+            opacity: 1;
+
+            &[data-current] {
+                background-color: var(--menu-act-bg);
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    display: block;
+                    border-radius: 30%;
+                    left: 0;
+                    width: 4px;
+                    background-color: var(--accent-color);
+                    animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+                    animation-name: pill-ani;
+                    animation-fill-mode: forwards;
+                    animation-duration: .25s;
+                }
+            }
+
+            &:not([data-current]) {
+                &::before {
+                    animation-fill-mode: backwards;
+                }
+            }
+
+            >img {
+                position: relative;
+                height: 20px;
+                top: 4px;
+                margin-right: 5px;
+            }
+
+            &:hover {
+                background-color: var(--menu-hov-bg);
+                color: var(--hov-fr);
+            }
+
+            &:active {
+                opacity: .6;
+            }
+        }
+
+        >.profile-banner {
+            display: flex;
+            align-items: center;
+            height: 80px;
+            padding-inline: 6px;
+            cursor: default;
+            border-radius: var(--control-border-radius);
+            margin-bottom: 25px;
+
+            &:hover {
+                background-color: var(--menu-hov-bg);
+            }
+
+            &:active {
+                opacity: .6;
+            }
+
+            >.profile-picture {
+                width: 64px;
+                height: 64px;
+                border-radius: 64px;
+                border: 1px solid var(--def-fr);
+                margin-right: 16px;
+            }
+
+            >div {
+                >h1 {
+                    font-size: 1rem;
+                    font-weight: 500;
+                    margin-block: 0 4px;
+                }
+
+                >h2 {
+                    font-size: .9rem;
+                    font-weight: 400;
+                    margin-block: 0;
+                }
+            }
+        }
+    }
+
+    >main {
+        @include scrollbar;
+        position: absolute;
+        left: var(--nav-width);
+        top: 0;
+        padding-block: var(--main-block-top);
+        width: calc(100% - var(--nav-width));
+        height: 100%;
+        overflow-y: auto;
+        transition: 180ms ease-out;
+
+        &.immersive-box {
+            background-color: var(--input-def-bg);
+            border-top: 1px solid var(--input-def-border-color);
+            border-left: 1px solid var(--input-def-border-color);
+            border-top-left-radius: 10px;
+            top: var(--main-offset-top);
+            height: calc(100% - var(--main-offset-top));
+
+            >div.app-contents {
+                height: 100%;
+                width: 100%;
+
+                >section {
+                    margin-inline: 30px;
+                }
+            }
+        }
+
+        &:not(.immersive-box)>div.app-contents {
+            margin-inline: auto;
+            padding-block: 30px;
+            min-height: 100%;
+            max-width: 1000px;
+        }
+
+        >div.app-contents {
+            animation: win-dash-ani 0.2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+
+            >section {
+                margin-block: 40px 0;
+
+                &:last-of-type {
+                    padding-bottom: 60px;
+                }
+            }
+
+            >section .section-title {
+                font-size: 1rem;
+                font-weight: 500;
+                margin-block: 0 5px;
+            }
+        }
+    }
+}
+
+@keyframes win-dash-ani {
+    0% {
+        -webkit-transform: translateY(60px);
+        transform: translateY(60px);
+        opacity: .2;
+    }
+
+    100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes pill-ani {
+    0% {
+        height: 0;
+        top: calc(50%);
+    }
+
+    90% {
+        height: 20px;
+        top: calc(50% - 10px);
+    }
+
+    100% {
+        height: 16px;
+        top: calc(50% - 8px);
+    }
+}

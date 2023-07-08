@@ -1,0 +1,24 @@
+div.win-filter-strip {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .filter-group {
+        display: inline-block;
+        margin-left: 16px;
+
+        >label {
+            font-size: 12px;
+            opacity: .7;
+            margin-right: 3px;
+
+            >img {
+                position: relative;
+                top: 2px;
+                height: 14px;
+                width: auto;
+                margin-right: 4px;
+            }
+        }
+    }
+}

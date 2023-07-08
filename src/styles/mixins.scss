@@ -1,0 +1,20 @@
+@mixin control-defaults {
+    font-family: var(--font-family);
+    background-color: var(--input-def-bg);
+    color: var(--def-fr);
+    border: 1px solid var(--input-def-border-color);
+}
+
+@mixin mica-default {
+    background-color: var(--mica-def-background);
+    border-radius: var(--window-border-radius);
+    border: var(--mica-border);
+    backdrop-filter: var(--mica-filter);
+}
+
+@mixin acrylic-default {
+    backdrop-filter: var(--acrlylic-filter);
+    background: linear-gradient(0deg, var(--acrlylic-background), var(--acrlylic-background)), var(--acrlylic-mask-img);
+    background-blend-mode: screen;
+    border: var(--acrlylic-border);
+}

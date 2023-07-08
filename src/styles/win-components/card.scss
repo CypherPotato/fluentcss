@@ -1,0 +1,58 @@
+.win-card {
+    padding: 18px;
+    border-radius: var(--control-border-radius);
+    background-color: var(--control-bg);
+    color: var(--def-fr);
+    border: 1px solid var(--control-border-color);
+
+    &:has(> .win-card-component) {
+        padding: 0;
+    }
+
+    >.win-card-component {
+        margin: 0 !important;
+        background: transparent;
+        border: none;
+        border-radius: 0;
+        width: 100%;
+        padding: 18px;
+
+        &:not(:last-child) {
+            border-bottom: 1px solid var(--control-border-color);
+        }
+    }
+
+    >details.win-expander.win-card-component {
+        padding: 0;
+
+        >summary {
+            padding: 18px;
+            line-height: 32px;
+            transition: .165s ease-out;
+
+            &::after {
+                position: absolute;
+                display: block;
+                font-family: 'Line Awesome Free';
+                font-weight: 900;
+                width: 32px;
+                height: 32px;
+                border-radius: var(--control-border-radius);
+                content: '\f107';
+                right: 18px;
+                top: 18px;
+                opacity: 1;
+                text-align: center;
+                line-height: 32px;
+            }
+        }
+
+        &[open]>summary {
+            padding-bottom: 38px;
+        }
+    }
+
+    ~.win-card {
+        margin-top: 4px;
+    }
+}
