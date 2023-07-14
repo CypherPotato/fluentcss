@@ -8,7 +8,7 @@
         display: none;
     }
 
-    &:not(:has(input[type='radio']) )::after {
+    &:not(:has(input[type='radio']))::after {
         position: absolute;
         display: block;
         content: " ";
@@ -19,7 +19,7 @@
         width: 0;
         height: 0;
         transform: rotate(45deg);
-        transform-origin: bottom left; 
+        transform-origin: bottom left;
     }
 
     &::before {
@@ -30,10 +30,10 @@
         content: ' ';
         background-color: var(--input-def-bg);
         border: 1px solid var(--check-def-border-color);
-        color: transparent; 
+        color: transparent;
         border-radius: var(--control-border-radius);
         width: 18px;
-        height: 18px; 
+        height: 18px;
         top: 5px;
         margin-right: 6px;
         opacity: 1;
@@ -46,7 +46,7 @@
 
     &:active::before {
         background-color: var(--input-act-bg);
-        border-color: var(--input-act-border-color); 
+        border-color: var(--input-act-border-color);
     }
 
     &:has(input:checked) {
@@ -57,10 +57,11 @@
 
         &::after {
             animation: check-open;
-            animation-timing-function: ease-out;
+            animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
             animation-fill-mode: forwards;
             animation-iteration-count: 1;
-            animation-duration: .25s;
+            animation-duration: .28s;
+            animation-delay: .05s;
         }
 
         &::before {
@@ -113,7 +114,7 @@
         height: 0;
     }
 
-    50% {
+    32% {
         width: 4px;
         height: 0;
     }

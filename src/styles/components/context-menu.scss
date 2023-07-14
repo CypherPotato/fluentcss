@@ -1,12 +1,3 @@
-#win-context-menu-clickarea {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    z-index: 999999;
-}
-
 .win-context-menu {
     position: absolute;
     display: grid;
@@ -18,7 +9,7 @@
     background-color: var(--mica-def-background);
     border: var(--mica-border);
     box-shadow: var(--drop-shadow-sm);
-    z-index: 99999999;
+    z-index: 10011;
     opacity: 0;
     gap: 4px;
     animation: var(--w-slide-down-ani);
@@ -26,6 +17,12 @@
 
     &.visible {
         opacity: 1;
+    }
+
+    >.context-menu-divider {
+        border-top: var(--mica-border);
+        margin-left: -4px;
+        width: calc(100% + 8px);
     }
 
     >.context-menu-item {

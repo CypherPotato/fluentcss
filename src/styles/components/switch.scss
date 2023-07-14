@@ -1,0 +1,71 @@
+.win-toggle-switch {
+    position: relative;
+    font-family: var(--font-family);
+    display: inline-block;
+    user-select: none;
+
+    >input {
+        display: none;
+    }
+
+    &::before {
+        font-weight: 900;
+        text-indent: 2px;
+        box-sizing: content-box;
+        display: inline-block;
+        position: relative;
+        content: ' ';
+        background-color: var(--input-def-bg);
+        border: 1px solid var(--check-def-border-color);
+        color: transparent;
+        border-radius: 50px;
+        width: 40px;
+        height: 18px;
+        top: 5px;
+        margin-right: 6px;
+        opacity: 1;
+        transition: var(--w-transition);
+    }
+
+    &:hover::before {
+        opacity: .6;
+    }
+
+    &::after {
+        position: absolute;
+        box-sizing: content-box;
+        content: " ";
+        display: block;
+        top: 9px;
+        left: 5px;
+        width: 12px;
+        height: 12px;
+        border-radius: 30px;
+        background-color: var(--def-fr);
+        transition: .25s cubic-bezier(0.075, 0.82, 0.165, 1);
+    }
+
+    &:has(input:checked):active::after {
+        left: 20px;
+        width: 18px;
+    }
+
+    &:not(:has(input:checked)):active::after {
+        width: 18px;
+    }
+
+    &:has(input:checked)::before {
+        background-color: var(--accent-color);
+        border: 1px solid var(--accent-color);
+    }
+
+    &:has(input:checked)::after {
+        left: 25px;
+        background-color: white;
+    }
+
+    &:has(input:disabled) {
+        opacity: .6;
+        pointer-events: none;
+    }
+}

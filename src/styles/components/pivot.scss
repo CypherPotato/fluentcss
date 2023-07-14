@@ -1,0 +1,43 @@
+.win-pivot {
+    display: flex;
+    gap: 30px;
+    height: 28px;
+    width: 100%;
+
+    >.pivot-item {
+        position: relative;
+        font-family: var(--font-family);
+        font-weight: 300;
+        font-size: 26px;
+        user-select: none;
+        opacity: .6;
+
+        &:hover {
+            opacity: .8;
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            height: 3px;
+            width: 100%;
+            border-radius: 5px;
+            background-color: var(--accent-color);
+            opacity: 0;
+        }
+
+        &:has(input:checked) {
+            opacity: 1;
+
+            &::before {
+                opacity: 1;
+            }
+        }
+
+        >input {
+            display: none;
+        }
+    }
+}

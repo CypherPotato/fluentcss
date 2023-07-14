@@ -1,0 +1,21 @@
+@import '..\\mixins.scss';
+
+.win-depth-1 {
+    @extend %win-depth-1;
+}
+
+.win-depth-2 {
+    @extend %win-depth-2;
+}
+
+.win-depth-3 {
+    @extend %win-depth-3;
+}
+
+.win-depth-4 {
+    @extend %win-depth-4;
+}
+
+.win-depth-5 {
+    @extend %win-depth-5;
+}

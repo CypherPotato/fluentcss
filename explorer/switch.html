@@ -1,0 +1,153 @@
+<div class="app-contents">
+    <section>
+        <h1>
+            Switchs and tabs
+        </h1>
+        <p>
+            A switchable control can programmatically toggle
+            the visibility of another component.
+        </p>
+    </section>
+    <section>
+        <h3>
+            Switcher using radio buttons
+        </h3>
+        <div class="win-viewbox">
+            <div class="viewbox-body">
+                <div class="win-stack">
+                    <label class="win-check">
+                        <input type="radio" name="boxes" onclick="win.switch('#blueBox')" checked>
+                        Blue
+                    </label>
+                    <label class="win-check">
+                        <input type="radio" name="boxes" onclick="win.switch('#redBox')">
+                        Red
+                    </label>
+                    <label class="win-check">
+                        <input type="radio" name="boxes" onclick="win.switch('#greenBox')">
+                        Green
+                    </label>
+                </div>
+                <div class="switch-group-container" style="width: 200px; height: 100px;">
+                    <div class="win-depth-1" id="blueBox" data-switch-group="boxes" style="background-color: rgb(219, 237, 255);" open>
+                        This is the blue box!
+                    </div>
+                    <div class="win-depth-1" id="redBox" data-switch-group="boxes" style="background-color: rgb(255, 219, 219);">
+                        This is the red box!
+                    </div>
+                    <div class="win-depth-1" id="greenBox" data-switch-group="boxes" style="background-color: rgb(208, 255, 222);">
+                        This is the green box!
+                    </div>
+                </div>
+            </div>
+            <div class="viewbox-footer">
+                <pre><code class="language-html">
+                    <xmp>
+                        <div class="win-stack">
+                            <label class="win-check">
+                                <input type="radio" name="boxes" onclick="win.switch('#blueBox')" checked>
+                                Blue
+                            </label>
+                            <label class="win-check">
+                                <input type="radio" name="boxes" onclick="win.switch('#redBox')">
+                                Red
+                            </label>
+                            <label class="win-check">
+                                <input type="radio" name="boxes" onclick="win.switch('#greenBox')">
+                                Green
+                            </label>
+                        </div>
+                        <div class="switch-group-container" style="width: 200px; height: 100px;">
+                            <div class="win-depth-1" id="blueBox" data-switch-group="boxes" open>
+                                This is the blue box!
+                            </div>
+                            <div class="win-depth-1" id="redBox" data-switch-group="boxes">
+                                This is the red box!
+                            </div>
+                            <div class="win-depth-1" id="greenBox" data-switch-group="boxes">
+                                This is the green box!
+                            </div>
+                        </div>
+                    </xmp>
+                </code></pre>
+            </div>
+        </div>
+    </section>
+    <section>
+        <h3>
+            Pivot using switch
+        </h3>
+        <div class="win-viewbox">
+            <div class="viewbox-body">
+                <div class="win-pivot">
+                    <label class="pivot-item" onclick="win.switch('#all')">
+                        <input type="radio" checked name="__pivot_group">
+                        All
+                    </label>
+                    <label class="pivot-item" onclick="win.switch('#unread')">
+                        <input type="radio" name="__pivot_group">
+                        Unread
+                    </label>
+                    <label class="pivot-item" onclick="win.switch('#flagged')">
+                        <input type="radio" name="__pivot_group">
+                        Flagged
+                    </label>
+                </div>
+                <div class="switch-group-container horizontal" style="width: 100%; height: 200px;">
+                    <div data-switch-group="__group_name" id="all" open>
+                        <p>
+                            You're reading all the mails now
+                        </p>
+                    </div>
+                    <div data-switch-group="__group_name" id="unread">
+                        <p>
+                            On the unread tab...
+                        </p>
+                    </div>
+                    <div data-switch-group="__group_name" id="flagged">
+                        <p>
+                            And flagged tab!
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="viewbox-footer">
+                <pre><code class="language-html">
+                    <xmp>
+                        <div class="win-pivot">
+                            <label class="pivot-item" onclick="win.switch('#all')">
+                                <input type="radio" checked name="__pivot_group">
+                                All
+                            </label>
+                            <label class="pivot-item" onclick="win.switch('#unread')">
+                                <input type="radio" name="__pivot_group">
+                                Unread
+                            </label>
+                            <label class="pivot-item" onclick="win.switch('#flagged')">
+                                <input type="radio" name="__pivot_group">
+                                Flagged
+                            </label>
+                        </div>
+                        <div class="switch-group-container horizontal" style="width: 100%; height: 200px;">
+                            <div data-switch-group="__group_name" id="all" open>
+                                <p>
+                                    You're reading all the mails now
+                                </p>
+                            </div>
+                            <div data-switch-group="__group_name" id="unread">
+                                <p>
+                                    On the unread tab...
+                                </p>
+                            </div>
+                            <div data-switch-group="__group_name" id="flagged">
+                                <p>
+                                    And flagged tab!
+                                </p>
+                            </div>
+                        </div>
+                    </xmp>
+                </code></pre>
+            </div>
+        </div>
+    </section>
+</div>

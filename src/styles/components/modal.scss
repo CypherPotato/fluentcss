@@ -1,3 +1,5 @@
+@import "..\\scrollbar.scss";
+
 .win-modal {
     position: fixed;
     width: 500px;
@@ -10,7 +12,7 @@
     border: 1px solid #9c9c9c;
     pointer-events: none;
     opacity: 0;
-    z-index: 10000;
+    z-index: 10021;
     overflow: hidden;
     box-shadow: var(--drop-shadow-xl);
     transition: .15s cubic-bezier(0.250, 0.460, 0.450, 0.940);
@@ -27,6 +29,7 @@
     }
 
     >.modal-contents {
+        @include scrollbar;
         max-height: 65vh;
         overflow-y: auto;
         padding: 24px;
@@ -52,18 +55,8 @@
 
         >.win-button {
             top: 0;
-            flex-grow: 1;
+            flex-grow: 0;
+            width: 100%;
         }
     }
-}
-
-#wininternal--el-lightbox {
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #00000081;
-    z-index: 9999;
-    transition: .2s cubic-bezier(0.250, 0.460, 0.450, 0.940);
 }

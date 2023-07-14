@@ -1,0 +1,23 @@
+@import '..\\mixins.scss';
+
+.win-flyout {
+    position: absolute;
+    padding: 14px 18px;
+    border-radius: var(--window-border-radius);
+    background-color: var(--input-hov-bg);
+    border: 1px solid var(--input-hov-border-color);
+    width: fit-content;
+    animation: var(--w-slide-down-ani);
+    transition: var(--w-transition);
+    opacity: 0;
+    pointer-events: none;
+    z-index: 10001;
+
+    &.visible {
+        pointer-events: all;
+        opacity: 1;
+    }
+
+    @extend %win-depth-4;
+    @extend %normalize-paragraph;
+}

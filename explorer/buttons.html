@@ -1,5 +1,13 @@
 <div class="app-contents">
     <section>
+        <h1>
+            Basic input
+        </h1>
+        <p>
+            These controls interacts with the user and reponds to the user input with mouse or keyboard.
+        </p>
+    </section>
+    <section>
         <h3>
             Buttons
         </h3>
@@ -145,7 +153,7 @@
         </h3>
         <div class="win-viewbox">
             <div class="viewbox-body">
-                <div class="win-input-block">
+                <div class="win-stack">
                     <label class="win-check">
                         <input type="checkbox" name="check">
                         Two-state checkbox
@@ -159,7 +167,7 @@
             <div class="viewbox-footer">
                 <pre><code class="language-html">
                     <xmp>
-                        <div class="win-input-block">
+                        <div class="win-stack">
                             <label class="win-check">
                                 <input type="checkbox" name="check">
                                 Two-state checkbox
@@ -180,7 +188,7 @@
         </h3>
         <div class="win-viewbox">
             <div class="viewbox-body">
-                <div class="win-input-block">
+                <div class="win-stack">
                     <label class="win-check">
                         <input type="radio" name="aaa">
                         Option A
@@ -198,7 +206,7 @@
             <div class="viewbox-footer">
                 <pre><code class="language-html">
                     <xmp>
-                        <div class="win-input-block">
+                        <div class="win-stack">
                             <label class="win-check">
                                 <input type="radio" name="aaa">
                                 Option A
@@ -210,6 +218,41 @@
                             <label class="win-check">
                                 <input type="radio" disabled name="aaa">
                                 Option C (disabled)
+                            </label>
+                        </div>
+                    </xmp>
+                </code></pre>
+            </div>
+        </div>
+    </section>
+    <section>
+        <h3>
+            Toggle switch
+        </h3>
+        <div class="win-viewbox">
+            <div class="viewbox-body">
+                <div class="win-stack">
+                    <label class="win-toggle-switch">
+                        <input type="checkbox" name="check">
+                        Enable this function
+                    </label>
+                    <label class="win-toggle-switch">
+                        <input type="checkbox" disabled name="check">
+                        Disabled toggle
+                    </label>
+                </div>
+            </div>
+            <div class="viewbox-footer">
+                <pre><code class="language-html">
+                    <xmp>
+                        <div class="win-stack">
+                            <label class="win-toggle-switch">
+                                <input type="checkbox" name="check">
+                                Enable this function
+                            </label>
+                            <label class="win-toggle-switch">
+                                <input type="checkbox" disabled name="check">
+                                Disabled toggle
                             </label>
                         </div>
                     </xmp>

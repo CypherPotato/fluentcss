@@ -10,7 +10,7 @@
 
 .win-button {
     @include control-defaults;
-    
+
     display: inline-block;
     border-bottom-color: var(--input-def-bottom-border-color);
     outline: none;
@@ -67,6 +67,15 @@
 
 label.win-button:has(input:checked) {
     @include accent-mixin;
+
+    &:hover {
+        opacity: .8;
+    }
+
+    &:active {
+        opacity: .6;
+        box-shadow: none;
+    }
 }
 
 label.win-button:has(input)>input {

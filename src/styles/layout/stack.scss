@@ -1,0 +1,16 @@
+.win-stack {
+    display: grid;
+    gap: 10px;
+
+    &.auto-size>* {
+        width: fit-content;
+    }
+
+    &.max-size {
+        justify-content: flex-start;
+    }
+
+    &.dry {
+        gap: 0 !important;
+    }
+}

@@ -1,60 +1,85 @@
 <div class="app-contents">
     <section>
+        <h1>
+            Context menu
+        </h1>
+        <p>
+            Contexts menus are windows with contextual options to what the
+            user is doing, being able to decide to do something with
+            an item, object or action.
+        </p>
+    </section>
+    <section>
         <h3>
             Simple context menu
         </h3>
         <div class="win-viewbox">
-            <div class="viewbox-body" style="background-image: url('/etc/example-wallpaper.jpg'); background-size: cover; padding: 50px;">
+            <div class="viewbox-body" id="viewboxContainer" style="background-image: url('/etc/example-wallpaper.jpg'); background-size: cover; padding: 50px;">
                 <script>
-                    function openCtxMenu1() {
-                        win.contextMenu([
-                            {
-                                onclick: () => {
-                                    alert("hello");
+                    document.querySelector("#viewboxContainer")
+                        .addEventListener("contextmenu", e => {
+                            e.preventDefault();
+                            win.contextMenu([
+                                {
+                                    onclick: () => {
+                                        alert("hello");
+                                    },
+                                    text: "Show alert",
+                                    img: "/etc/icons/star.svg"
                                 },
-                                text: "Show alert",
-                                img: "/etc/icons/star.svg"
-                            },
-                            {
-                                enabled: false,
-                                onclick: () => {
-                                    alert("hello");
+                                {
+                                    onclick: () => {
+                                        alert("another alert");
+                                    },
+                                    text: "Show another alert"
                                 },
-                                text: "Disabled item"
-                            }
-                        ]);
-                    }
+                                {
+                                    enabled: false,
+                                    onclick: () => {
+                                        alert("hello");
+                                    },
+                                    text: "Disabled item"
+                                },
+                                "divider",
+                                {
+                                    onclick: () => { },
+                                    text: "Another item",
+                                    img: "/etc/icons/box.svg"
+                                },
+                            ]);
+                        });
                 </script>
-                <button onclick="openCtxMenu1()" class="win-button">
-                    Open context menu
-                </button>
+                <p style="color: white;">
+                    Right click anywhere to open the context menu
+                </p>
             </div>
             <div class="viewbox-footer">
                 <pre><code class="language-html">
                     <xmp>
                         <script>
-                            function openCtxMenu1() {
-                                win.contextMenu([
-                                    {
-                                        onclick: () => {
-                                            alert("hello");
+                            document.querySelector("#viewboxContainer")
+                                .addEventListener("contextmenu", () => {
+                                    win.contextMenu([
+                                        {
+                                            onclick: () => {
+                                                alert("hello");
+                                            },
+                                            text: "Show alert",
+                                            img: "/etc/icons/star.svg"
                                         },
-                                        text: "Show alert",
-                                        img: "/etc/icons/star.svg"
-                                    },
-                                    {
-                                        enabled: false,
-                                        onclick: () => {
-                                            alert("hello");
-                                        },
-                                        text: "Disabled item"
-                                    }
-                                ]);
-                            }
+                                        {
+                                            enabled: false,
+                                            onclick: () => {
+                                                alert("hello");
+                                            },
+                                            text: "Disabled item"
+                                        }
+                                    ]);
+                                });
                         </script>
-                        <button onclick="openCtxMenu1()" class="win-button">
-                            Open context menu
-                        </button>
+                        <p>
+                            Right click anywhere to open the context menu
+                        </p>
                     </xmp>
                 </code></pre>
             </div>

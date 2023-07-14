@@ -1,0 +1,48 @@
+<div class="app-contents">
+    <section>
+        <h1>
+            Flyout
+        </h1>
+        <p>
+            Flyouts are small modals that are displayed under the user mouse, which tracks
+            attention and requires input to handle actions.
+        </p>
+    </section>
+    <section>
+        <h3>
+            A button with a flyout
+        </h3>
+        <div class="win-viewbox">
+            <div class="viewbox-body">
+                <div class="win-flyout" id="myFlyout">
+                    <p>
+                        All items will be removed. Do you want to continue?
+                    </p>
+                    <button class="win-button" onclick="alert('Cart empty.')">
+                        Yes, empty my cart
+                    </button>
+                </div>
+                <button onclick="win.flyout('#myFlyout')" class="win-button">
+                    Empty cart
+                </button>
+            </div>
+            <div class="viewbox-footer">
+                <pre><code class="language-html">
+                    <xmp>
+                        <div class="win-flyout" id="myFlyout">
+                            <p>
+                                All items will be removed. Do you want to continue?
+                            </p>
+                            <button class="win-button" onclick="alert('Cart empty.')">
+                                Yes, empty my cart
+                            </button>
+                        </div>
+                        <button onclick="win.flyout('#myFlyout')" class="win-button">
+                            Empty cart
+                        </button>
+                    </xmp>
+                </code></pre>
+            </div>
+        </div>
+    </section>
+</div>

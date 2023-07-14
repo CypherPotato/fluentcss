@@ -156,6 +156,27 @@
 
                 >section {
                     margin-inline: 30px;
+
+                    // first section has an bigger h1
+                    &:first-child {
+                        >h1:first-child {
+                            margin-block: 0 5px;
+                            font-weight: 500;
+                            font-size: 1.75em;
+                        }
+                    }
+
+                    // so this ins't the first section, but is the
+                    // first h1 to show up
+                    >h1:first-child {
+                        margin-block: 40px 5px;
+                        font-weight: 500;
+                    }
+
+                    >h3,
+                    >h2 {
+                        font-weight: 500;
+                    }
                 }
             }
         }

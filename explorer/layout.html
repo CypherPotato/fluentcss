@@ -1,0 +1,147 @@
+<style>
+    .example {
+        border: 1px solid red;
+        display: inline-block;
+        background-color: rgb(255, 244, 244);
+    }
+</style>
+<div class="app-contents">
+    <section>
+        <h1>
+            Layout
+        </h1>
+        <p>
+            Layout controls is used to arrange, organize or place itens on the user view.
+        </p>
+    </section>
+    <section>
+        <h3>
+            Stack
+        </h3>
+        <div class="win-viewbox">
+            <div class="viewbox-body">
+                <div class="win-stack">
+                    <div class="example">
+                        This example box has contents
+                    </div>
+                    <div class="example">
+                        This example box has contents
+                    </div>
+                    <div class="example">
+                        This example box has contents
+                    </div>
+                    <div class="example">
+                        This example box has contents
+                    </div>
+                </div>
+            </div>
+            <div class="viewbox-footer">
+                <pre><code class="language-html">
+                    <xmp>
+                        <div class="win-stack">
+                            <div class="example">
+                                This example box has contents
+                            </div>
+                            <div class="example">
+                                This example box has contents
+                            </div>
+                            <div class="example">
+                                This example box has contents
+                            </div>
+                            <div class="example">
+                                This example box has contents
+                            </div>
+                        </div>
+                    </xmp>
+                </code></pre>
+            </div>
+        </div>
+    </section>
+    <section>
+        <h3>
+            Stack, fit children to content sizes
+        </h3>
+        <div class="win-viewbox">
+            <div class="viewbox-body">
+                <div class="win-stack auto-size">
+                    <div class="example">
+                        Example 1
+                    </div>
+                    <div class="example">
+                        Example, example, example, 2
+                    </div>
+                    <div class="example">
+                        Test
+                    </div>
+                </div>
+            </div>
+            <div class="viewbox-footer">
+                <pre><code class="language-html">
+                    <xmp>
+                        <div class="win-stack auto-size">
+                            ...
+                        </div>
+                    </xmp>
+                </code></pre>
+            </div>
+        </div>
+    </section>
+    <section>
+        <h3>
+            Stack, fit children to the biggest size
+        </h3>
+        <div class="win-viewbox">
+            <div class="viewbox-body">
+                <div class="win-stack max-size">
+                    <div class="example">
+                        Example 1
+                    </div>
+                    <div class="example">
+                        Example, example, example, 2
+                    </div>
+                    <div class="example">
+                        Test
+                    </div>
+                </div>
+            </div>
+            <div class="viewbox-footer">
+                <pre><code class="language-html">
+                    <xmp>
+                        <div class="win-stack max-size">
+                            ...
+                        </div>
+                    </xmp>
+                </code></pre>
+            </div>
+        </div>
+    </section>
+    <section>
+        <h3>
+            Stack, no gap between itens
+        </h3>
+        <div class="win-viewbox">
+            <div class="viewbox-body">
+                <div class="win-stack dry">
+                    <div class="example">
+                        Example 1
+                    </div>
+                    <div class="example">
+                        Example, example, example, 2
+                    </div>
+                    <div class="example">
+                        Test
+                    </div>
+                </div>
+            </div>
+            <div class="viewbox-footer">
+                <pre><code class="language-html">
+                    <xmp>
+                        <div class="win-stack dry">
+                            ...
+                        </div>
+                    </xmp>
+                </code></pre>
+            </div>
+        </div>
+    </section>
+</div>

@@ -1,11 +1,6 @@
 /**
  * context menu
  */
-document.addEventListener('mousemove', (e) => {
-    window.mouseX = e.clientX;
-    window.mouseY = e.clientY;
-});
-
 window.win.contextMenu = (options) => {
     let body = document.querySelector("body");
     let behind = document.createElement("div");
@@ -17,7 +12,18 @@ window.win.contextMenu = (options) => {
     menu.style.left = window.mouseX + "px";
     menu.style.top = window.mouseY + "px";
 
+    menu.addEventListener("contextmenu", function (e) { e.preventDefault() });
+    behind.addEventListener("contextmenu", function (e) { e.preventDefault(); window.win.dismissContextMenu(); });
+
     for (const item of options) {
+
+        if (item == "divider") {
+            var divItem = document.createElement("div");
+            divItem.classList.add("context-menu-divider");
+            menu.appendChild(divItem);
+            continue;
+        }
+
         var menuItem = document.createElement("a");
         menuItem.classList.add("context-menu-item");
         menuItem.addEventListener('click', window.win.dismissContextMenu);
