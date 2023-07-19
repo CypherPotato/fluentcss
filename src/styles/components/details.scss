@@ -1,0 +1,44 @@
+table.win-details {
+    border-collapse: collapse;
+    width: 100%;
+
+    td,
+    th {
+        height: 42px;
+        padding-inline: 12px 42px;
+    }
+
+    &.compact {
+
+        td,
+        th {
+            height: 32px;
+            padding-inline: 8px 32px;
+        }
+    }
+
+    >thead>tr {
+        border-bottom: 1px solid var(--input-def-border-color);
+
+        >th {
+            opacity: .7;
+            text-align: left;
+        }
+    }
+
+    >tbody>tr {
+        border-bottom: 1px solid var(--input-hov-border-color);
+
+        >td {
+            opacity: .8;
+        }
+
+        &:hover {
+            background-color: var(--input-hov-bg);
+
+            >td {
+                opacity: 1;
+            }
+        }
+    }
+}

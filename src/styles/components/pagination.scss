@@ -1,0 +1,53 @@
+@import "../mixins.scss";
+
+.win-pagination {
+    display: flex;
+    width: fit-content;
+    margin-block: 10px;
+
+    >ul {
+        list-style-type: none;
+        display: flex;
+        gap: 3px;
+        margin: 0 6px;
+        padding: 0;
+
+        >li {
+            padding: 0 12px;
+            height: 32px;
+            line-height: 32px;
+            cursor: default;
+            border-radius: var(--control-border-radius);
+            border: 1px solid transparent;
+            outline: none;
+            background-color: transparent;
+            font-family: var(--font-family);
+            color: var(--def-fr);
+
+            &:not(.current) {
+                &:hover {
+                    background-color: var(--input-hov-bg);
+                    border-color: var(--input-hov-bg);
+                }
+
+                &:active {
+                    background-color: var(--input-act-bg);
+                    border-color: var(--input-act-bg);
+                    opacity: .7;
+                }
+            }
+
+            &.current {
+                @include accent-mixin;
+
+                &:hover {
+                    opacity: .7;
+                }
+
+                &:active {
+                    opacity: .5;
+                }
+            }
+        }
+    }
+}

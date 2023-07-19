@@ -1,13 +1,5 @@
 @import "../mixins.scss";
 
-@mixin accent-mixin {
-    background-color: var(--accent-color);
-    color: white;
-    border: 1px solid #ffffff21;
-    border-bottom-color: #00000041;
-    opacity: 1;
-}
-
 .win-button {
     @include control-defaults;
 

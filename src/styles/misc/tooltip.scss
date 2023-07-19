@@ -1,0 +1,30 @@
+@import '..\\misc\\blockers.scss';
+@import '..\\mixins.scss';
+
+[data-tooltip] {
+    &::after {
+        @extend %win-depth-2;
+        @extend %tooltip-zindex;
+        position: fixed;
+        top: var(--window-y);
+        left: var(--window-x);
+        content: attr(data-tooltip);
+        border-radius: var(--control-border-radius);
+        background-color: var(--input-def-bg);
+        border: 1px solid var(--input-def-border-color);
+        color: var(--def-fr);
+        padding: 6px;
+        transition-delay: .5s;
+        pointer-events: none;
+        width: max-content;
+        line-height: initial;
+        opacity: 0;
+        transition: opacity .2s ease-in-out;
+    }
+
+    &:hover {
+        &::after {
+            opacity: 1;
+        }
+    }
+}

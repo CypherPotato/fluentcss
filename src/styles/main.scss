@@ -15,7 +15,7 @@
     --mica-def-background: #ffffffda;
     --mica-hov-background: #ffffffee;
     --mica-act-background: #ffffffff;
-    --mica-filter: blur(80px) saturate(5);
+    --mica-filter: blur(80px) brightness(.9) saturate(5);
     --mica-border: 1px solid #b6b6b654;
     --mica-hov-border: 1px solid #b6b6b694;
 
@@ -39,6 +39,8 @@
     --input-def-bottom-border-color: #CCCCCC;
     --input-hov-bottom-border-color: #CCCCCC;
     --input-act-bottom-border-color: #E5E5E5;
+
+    --command-hover: #eeeeee;
 
     --drop-shadow-xl: 0 4px 16px 0 #00000055;
     --drop-shadow-sm: 0 3px 14px 0 #00000012;

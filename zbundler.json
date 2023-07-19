@@ -7,7 +7,7 @@
         ],
         "output": [
             "./dist/latest/fluentcss.css",
-            "./dist/v0.2/fluentcss.css"
+            "./dist/v0.3/fluentcss.css"
         ]
     },
     {
@@ -18,7 +18,7 @@
         ],
         "output": [
             "./dist/latest/fluentcss.js",
-            "./dist/v0.2/fluentcss.js"
+            "./dist/v0.3/fluentcss.js"
         ]
     }
 ]

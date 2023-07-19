@@ -33,3 +33,8 @@
     @extend %click-blocker;
     z-index: 10000;
 }
+
+// tooltip
+%tooltip-zindex {
+    z-index: 10090;
+}

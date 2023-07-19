@@ -11,8 +11,8 @@
     <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
 
     <!-- fluent-css dist files -->
-    <link rel="stylesheet" href="/dist/v0.2/fluentcss.css">
-    <script src="/dist/v0.2/fluentcss.js"></script>
+    <link rel="stylesheet" href="/dist/v0.3/fluentcss.css">
+    <script src="/dist/v0.3/fluentcss.js"></script>
 
     <!-- router and prism -->
     <link rel="stylesheet" href="/etc/prism.css?cache-index=1">
@@ -50,6 +50,9 @@
             },
             onFetch: (link) => {
                 window.contentPath = link;
+            },
+            handleFileResolve: (file) => {
+                return file + "?__version=v0.3"
             }
         };
         window.Planifolia.fetchComponents(container);

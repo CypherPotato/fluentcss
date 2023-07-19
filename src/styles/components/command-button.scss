@@ -1,0 +1,43 @@
+.win-command-button {
+    display: inline-block;
+    font-family: var(--font-family);
+    border-radius: var(--control-border-radius);
+    border: none;
+    outline: none;
+    padding: 0 12px;
+    height: 36px;
+    line-height: 36px;
+    user-select: none;
+    text-decoration: none;
+    text-align: center;
+    cursor: default;
+    width: fit-content;
+    color: var(--def-fr);
+    background-color: transparent;
+    opacity: 1;
+    transition: var(--w-transition);
+
+    &:disabled,
+    &[disabled] {
+        opacity: .6;
+        pointer-events: none;
+    }
+
+    &:hover {
+        background-color: var(--command-hover);
+    }
+
+    &:active {
+        opacity: .6;
+    }
+
+    >[role="img"] {
+        position: relative;
+        top: 2px;
+        width: 20px;
+        height: 20px;
+        object-fit: contain;
+        font-size: 20px;
+        margin-right: 4px;
+    }
+}

@@ -149,6 +149,39 @@
     </section>
     <section>
         <h3>
+            Command button
+        </h3>
+        <div class="win-viewbox">
+            <div class="viewbox-body">
+                <button class="win-command-button">
+                    <i role="img" class="las la-plus"></i> Standard
+                </button>
+                <button class="win-command-button" disabled>
+                    <i role="img" class="las la-pen"></i> Edit
+                </button>
+                <button class="win-command-button" onclick="win.contextMenu([{text: 'Settings', icon: '/etc/icons/star.svg'}])">
+                    <i class="las la-ellipsis-h"></i>
+                </button>
+            </div>
+            <div class="viewbox-footer">
+                <pre><code class="language-html">
+                    <xmp>
+                        <button class="win-command-button">
+                            <i role="img" class="las la-plus"></i> Standard
+                        </button>
+                        <button class="win-command-button" disabled>
+                            <i role="img" class="las la-pen"></i> Edit
+                        </button>
+                        <button class="win-command-button" onclick="win.contextMenu([{text: 'Settings', icon: '/etc/icons/star.svg'}])">
+                            <i class="las la-ellipsis-h"></i>
+                        </button>
+                    </xmp>
+                </code></pre>
+            </div>
+        </div>
+    </section>
+    <section>
+        <h3>
             Checkbox
         </h3>
         <div class="win-viewbox">
